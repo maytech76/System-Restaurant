@@ -1,0 +1,10 @@
+--------------------------------------------------
+|-- Procedimiento para implementar CartShoping --|
+--------------------------------------------------
+
+1. Ubicamos el paquete en la siguiente url : https://packagist.org/packages/codersfree/shoppingcart
+
+
+1. Instalamos  las dependencias necesarias:
+   
+composer require codersfree/shoppingcart
