@@ -9,10 +9,22 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DriverController;
-
+use App\Http\Controllers\ProductListController;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\Product;
+use App\Livewire\ProductSearch;
+use CodersFree\Shoppingcart\Facades\Cart;
+use App\Http\Controllers\CartController;
+
+use App\Livewire\Products\AddToCart as ProductsAddToCart;
+
+Route::get('/add-to-cart/{productId}', ProductsAddToCart ::class)->name('add-to-cart');
+
+Route::get('/add-to-cart/{productId}', [CartController::class, 'show'])->name('add-to-cart');
+
+/* Controlador donde visualizamos la busqueda de producto segun su nombre  */
+Route::get('/product-search', ProductSearch ::class)->name('product.search');
 
 
 /* Route::redirect('/', 'login'); */
@@ -48,6 +60,9 @@ Route::resource('companies', CompanyController::class);
 
 /* Ruta para controlador Datos to system */
 Route::resource('customers', CustomerController::class);
+
+/* Ruta para controlador ProductlistController*/
+Route::get('productslist/{product}', [ProductListController::class,  'index'])->name('productslist');
 
 
 
@@ -88,7 +103,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/ecommerce/pay', function () {
         return view('pages/ecommerce/pay');
     })->name('pay');     
-/*     Route::get('/campaigns', [CampaignController::class, 'index'])->name('campaigns');
+    /*     Route::get('/campaigns', [CampaignController::class, 'index'])->name('campaigns');
     Route::get('/community/users-tabs', [MemberController::class, 'indexTabs'])->name('users-tabs'); */
    /*  Route::get('/community/users-tiles', [MemberController::class, 'indexTiles'])->name('users-tiles'); */
     Route::get('/community/profile', function () {
@@ -228,4 +243,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     });   
     
     
+});
+
+Route::get('prueba', function(){
+    Cart::instance('shopping');
+    return Cart::content();
 });

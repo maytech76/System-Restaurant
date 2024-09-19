@@ -913,129 +913,17 @@
 
                     </div>
             </div>
-        
-            {{-- categorias --}}
-            <div class=" justify-center flex shadow-md w-full h-[150px] my-6 rounded-lg gap-4">
+       
+            @livewire('category-products')
 
-                @foreach ($categories as $category)
-                    <div class="gap-2 text-center">
-                        <a href="#">
-                            <img src="https://static.vecteezy.com/system/resources/previews/025/222/171/original/red-plate-with-chinese-sticks-isolated-on-transparent-background-top-view-png.png"
-                                class="w-20 sm:w-[150px]   h-15 sm:h-[100px]">
-                            <p class="text-gray-300">{{$category->name}}</p>
-                        </a>
-                    </div>
-                @endforeach
-
-            </div>
-
-            {{-- card-menu --}}
-            <div class="mt-16">
-
-                <h4 class="text-gray-200 font-semibold uppercase pb-2">Promosiones</h4>
-
-                {{-- <h3 class="text-white mb-4 font-bold">Categoria Nombre</h3> --}}
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 mb-4">
-                   
-
-                    @foreach ($products as $product)
-                        <div class="p-6 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg shadow-2xl shadow-gray-500/20 flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div class="justify-start items-center">
-                                <img class="rounded-md shadow-sm"
-                                    src="{{ asset('storage/' . $product->image_path) }}" />
-                                <h4 class="mt-6 text-xl font-semibold text-gray-100">{{ $product->name }}</h4>
-
-                                <p class="mt-4 text-gray-200 text-sm mb-4">
-                                    Descripcion del producto Descripcion del producto Descripcion del
-                                    producto Descripcion del producto Descripcion del producto
-                                </p>
-
-
-                                <div class="inline-block rounded-md px-2 border border-red-400">
-                                    <h4 class="py-2 text-center block text-red-600 font-bold">12.000 CLP</h4>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-
-                </div>
-
-                {{-- Otras Cards --}}
-
-                <div class="mt-10">
-                    <div>
-                         <h4 class="text-gray-200 font-semibold uppercase">Menu Principal</h4>
-                          <div class='p-1 '>
-                              <ul class='grid grid-cols-1 gap-8 md:grid-cols-2 
-                                 lg:grid-cols-3 md:p-2 xl:p-4'>
-
-                                 @foreach ($products as $product)
-                                     
-                                 
-                                  <li class='relative bg-gradient-to-r from-gray-800 to-gray-900 flex w-full gap-4 border border-gray-700 rounded hover:transition shadow-md hover:border-red-800 hover:shadow-red-600'>
-                                     
-                                    <div class='absolute flex justify-center gap-1 w-10 text-xl font-bold 
-                                        text-center text-gray-100 -top-2 -left-2'>
-                                          
-                                      </div>
-                                      <Link class='w-full overflow-hidden rounded'>
-                                          <img src="https://img.freepik.com/fotos-premium/sushi-fondo-negro_911620-2844.jpg" alt="Opa" class='object-cover my-auto rounded w-28 h-28' />
-                                      </Link>
-
-                                      <div class='flex flex-col justify-between flex-grow gap03 px-2'>
-                                          <div class='w-full'>
-                                              <span  class='font-semibold md:text-xl text-gray-200'>
-                                                  Nombre del producto
-                                              </span>
-                                              <p class='pt-1 text-sm text-gray-300'>
-                                                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                              </p>
-                                          </div>
-                                          <div class='flex items-center justify-between gap-1 mb-2'>
-                                              <div class='text-sm text-gray-400'>
-                                                <?xml version="1.0" encoding="UTF-8"?>
-
-                                                <div class="flex items-center gap-1 text-white">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="12" height="12">
-                                                        <path fill="#ffffff" d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm0-21C7.038,3,3,7.037,3,12s4.038,9,9,9,9-4.037,9-9S16.962,3,12,3Zm4.265,8.472l-1.505-2.596-1.76,1.021v-3.896h-3V15.104l6.265-3.632Z"/>
-                                                    </svg>
-                                                     15 min
-                                                </div>
-
-                                              </div>
-                                              <div class='flex items-center gap-1 px-2 py-1 text-gra-700 rounded'>
-                                                    <div class='text-sm text-red-700'>
-                                                        12.000 CLP
-                                                    </div>
-                                                  </span>
-                                              </div>
-                                          </div>
-                                      </div>
-
-                                  </li>     
-                                  
-                                  @endforeach
-                                  
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-
-
-
-            </div>
-
+                {{-- Session Footer --}}
            
                 <footer class="bg-black flex flex-col xs:space-y-8 sm:space-y-10 justify-center mt-10 p-10 rounded-b-xl">
 
                     <nav class="flex justify-center flex-wrap gap-6 text-gray-200 font-medium mb-4">
-                        <a class="hover:text-gray-900" href="#">Inicio</a>
-                        <a class="hover:text-gray-900" href="#">Nosotros</a>
-                        <a class="hover:text-gray-900" href="#">Menu</a>
-                        <a class="hover:text-gray-900" href="#">contacto</a>
-                      
+                        <P class="hover:text-gray-900" href="#">¡NO TE ENRROLLES, MEJOR PIDETE UN ROLLITO!</P>
                     </nav>
-                
+            
                     <div class="flex justify-center space-x-5 mb-4">
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                             <img class="w-15 md:w-20 h-15 md:h-20" src="https://goodies.icons8.com/web/common/social/instagram.svg" />
@@ -1048,8 +936,8 @@
                         </a>
                         
                     </div>
-                    <p class="text-center text-gray-200 font-medium">&copy; 2024 Aratashi Sushii. Todos los Derechos Reservados.</p>
-                </footer>
+                   <p class="text-center text-gray-200 font-medium">&copy; 2024 Aratashi Sushii. Todos los Derechos Reservados.</p>
+            </footer>
            
 
         </div>

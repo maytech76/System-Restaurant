@@ -5,6 +5,30 @@
 1. Ubicamos el paquete en la siguiente url : https://packagist.org/packages/codersfree/shoppingcart
 
 
-1. Instalamos  las dependencias necesarias:
+2. Instalamos  las dependencias necesarias:
+   composer require codersfree/shoppingcart
+
+
+3. Creamos un componente Livewire para listar los productos que podriamos agregar al pedido
+   php artisan make:livewire ProductSearch
+
+   esto me creara el archivo Clase->Controlador
+   y el archivo views->livewire->ProductSearch
+
+4. agregamos  el siguiente codigo html, tailwind y blade a el archivo views->livewire->ProductSearch.blade.php
    
-composer require codersfree/shoppingcart
+
+5.  Creamos un componente Livewire para agregar productos al pedido (Adentro de una carpeta llamada products)
+    php artisan make:livewire products.add-to-cart
+
+6. 
+
+
+
+   
+
+
+
+
+
+
