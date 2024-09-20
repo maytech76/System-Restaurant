@@ -119,6 +119,22 @@ class CompanyController extends Controller
         
     }
 
+    //Metodo para enviar a la vista auth.authentication las propiedades del objeto companies
+    public function showLogin(){
+        // Obtener todas las compañías
+        $companies = Company::all();
+
+        // Pasar las compañías a la vista
+        return view('AuthenticationLayout', compact('companies'));
+    }
+
+
+    public function someControllerMethod()
+    {
+        $companies = Company::all(); // O la lógica que utilices para obtener la compañía
+        return view('components.app.sidebar', compact('companies'));
+    }
+
     
     public function destroy(string $id)
     {

@@ -1,14 +1,12 @@
 <?php
 
-namespace App\View\Components;
+namespace App\Livewire;
 
 use App\Models\Company;
-use Illuminate\View\Component;
+use Livewire\Component;
 
-
-class AuthenticationLayout extends Component
+class Sidebar extends Component
 {
-
     public $companies;
 
     // Utilizamos el constructor para inicializar la propiedad
@@ -28,6 +26,6 @@ class AuthenticationLayout extends Component
      */
     public function render()
     {
-        return view('layouts.authentication',  ['companies' => $this->companies]);
+        return view('livewire.sidebar',  ['companies' => $this->companies]);
     }
 }

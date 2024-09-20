@@ -56,6 +56,7 @@
         <!-- Page wrapper -->
         <div class="flex h-[100dvh] overflow-hidden">
             
+           
             {{-- enlace con el componente siderbar-> Menu Sidebar Izquierdo --}}
             <x-app.sidebar :variant="$attributes['sidebarVariant']" />
 

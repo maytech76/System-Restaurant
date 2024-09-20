@@ -1,16 +1,16 @@
 <x-authentication-layout>
-    <h1 class="text-3xl text-gray-800 dark:text-gray-100 font-bold mb-6">{{ __('Create your Account') }}</h1>
+    <h1 class=" text-center text-3xl text-gray-800 dark:text-gray-100 font-bold mb-6">{{ __('Registro de Usuario') }}</h1>
     <!-- Form -->
     <form method="POST" action="{{ route('register') }}">
         @csrf
         <div class="space-y-4">
             <div>
-                <x-label for="name">{{ __('Full Name') }} <span class="text-red-500">*</span></x-label>
+                <x-label for="name">{{ __('Nombre Completo') }} <span class="text-red-500">*</span></x-label>
                 <x-input id="name" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
             <div>
-                <x-label for="email">{{ __('Email Address') }} <span class="text-red-500">*</span></x-label>
+                <x-label for="email">{{ __('Email') }} <span class="text-red-500">*</span></x-label>
                 <x-input id="email" type="email" name="email" :value="old('email')" required />
             </div>
 
@@ -20,7 +20,7 @@
             </div>
 
             <div>
-                <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-label for="password_confirmation" value="{{ __('Confirmar Password') }}" />
                 <x-input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
         </div>
@@ -28,11 +28,11 @@
             <div class="mr-1">
                 <label class="flex items-center" name="newsletter" id="newsletter">
                     <input type="checkbox" class="form-checkbox" />
-                    <span class="text-sm ml-2">Email me about product news.</span>
+                    <span class="text-sm ml-2">Email para recibir Actualizaciones.</span>
                 </label>
             </div>
             <x-button>
-                {{ __('Sign Up') }}
+                {{ __('Registro') }}
             </x-button>                
         </div>
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
@@ -53,7 +53,7 @@
     <!-- Footer -->
     <div class="pt-5 mt-6 border-t border-gray-100 dark:border-gray-700/60">
         <div class="text-sm">
-            {{ __('Have an account?') }} <a class="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="{{ route('login') }}">{{ __('Sign In') }}</a>
+            {{ __('Tienes una Cuenta?') }} <a class="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="{{ route('login') }}">{{ __('Accede') }}</a>
         </div>
     </div>
 </x-authentication-layout>
