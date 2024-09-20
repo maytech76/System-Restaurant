@@ -125,6 +125,7 @@ class CarController extends Controller
         /* dd($request->toArray());  */
 
         $request->validate([
+            
             'cartype_id' =>'nullable',
             'brand_id' =>'required',
             'model_car_id' =>'required',

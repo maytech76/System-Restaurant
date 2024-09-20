@@ -14,7 +14,7 @@ class ProductController extends Controller
     
     public function index() {
         // Usamos el método 'with' para cargar la relación con la categoría y aplicamo la paginacion
-        $products = Product::with('category')->paginate(6);
+        $products = Product::with('category')->paginate(8);
 
         return view('products.index', compact('products'));
     }

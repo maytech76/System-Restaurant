@@ -21,9 +21,25 @@
          {{-- Formulario de registro --}}
         <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
 
-            <form class="max-w-lg mx-auto" action="{{route('categories.update', $category->id)}}" method="POST">
+            <form class="max-w-lg mx-auto" action="{{route('categories.update', $category->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
+
+                {{-- Image-cars# --}}
+                <div x-data="{ imagePreview: '{{ $category->image_path ? asset('storage/' . $category->image_path) : '' }}' }" >
+
+                    <!-- Vista previa de la imagen -->
+                    <div class="mt-2">
+                        <template x-if="imagePreview">
+                            <img :src="imagePreview" alt="Vista previa de la imagen" class="justify-center items-center w-[300px] h-[250px] object-cover rounded-md shadow-sm">
+                        </template>
+                    </div>
+
+                    <label for="image" class="block text-sm font-medium text-gray-700">Avatar de categoria</label>
+                    <input type="file" name="image" id="image" class="mt-1 block w-100" accept="image/*"
+                @change="imagePreview = URL.createObjectURL($event.target.files[0])">
+        
+            </div>
 
                 <div class="mb-5">
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
