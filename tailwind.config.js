@@ -93,6 +93,14 @@ export default {
           900: '#4F3D0E',
           950: '#342809',
         },
+        orange: {
+          50:  '#EF9D84',
+          100: '#ED9A62',
+          200: '#EA8E50',
+          300: '#D37433',
+          400: '#F15A24',
+          500: '#E54413',
+        },
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],

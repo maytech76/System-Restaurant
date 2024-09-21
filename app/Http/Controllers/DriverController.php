@@ -188,6 +188,13 @@ class DriverController extends Controller
 
     
     public function destroy(Driver $driver){
+
+
+             // Eliminar la imagen si existe
+             if ($driver->image_path) {
+                Storage::disk('public')->delete($driver->image_path);
+            }
+
         $driver->delete();
 
         session()->flash('swal', [

@@ -27,8 +27,15 @@
                 </div>
             @endif
 
-            <form class="max-w-lg mx-auto" action="{{route('categories.store')}}" method="POST">
+            <form class="max-w-lg mx-auto" action="{{route('categories.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
+
+
+                 <!-- Logo de la Categoria -->
+                 <div class="mb-5">
+                    <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Logo de la Empresa</label>
+                    <input name="image" type="file" id="file" class="w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" />
+                </div>
 
                 <div class="mb-5">
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>

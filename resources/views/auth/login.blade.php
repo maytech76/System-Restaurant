@@ -1,5 +1,5 @@
 <x-authentication-layout>
-    <h1 class="text-3xl text-gray-800 dark:text-gray-100 font-bold mb-6">{{ __('Bienvenido de nuevo!') }}</h1>
+    <h1 class=" text-center text-2xl text-gray-800 dark:text-gray-100 font-bold mb-6">{{ __('Bienvenido de nuevo!') }}</h1>
     @if (session('status'))
         <div class="mb-4 font-medium text-sm text-green-600">
             {{ session('status') }}
@@ -18,15 +18,15 @@
                 <x-input id="password" type="password" name="password" required autocomplete="current-password" />                
             </div>
         </div>
-        <div class="flex items-center justify-between mt-6">
-            @if (Route::has('password.request'))
+        <div class="items-center mt-6">
+            {{-- @if (Route::has('password.request'))
                 <div class="mr-1">
                     <a class="text-sm underline hover:no-underline" href="{{ route('password.request') }}">
                         {{ __('Olvidaste tus credenciales?') }}
                     </a>
                 </div>
-            @endif            
-            <x-button class="ml-3">
+            @endif        --}}     
+            <x-button class="w-full">
                 {{ __('Acceder') }}
             </x-button>            
         </div>
@@ -34,19 +34,15 @@
     <x-validation-errors class="mt-4" />   
     <!-- Footer -->
     <div class="pt-5 mt-6 border-t border-gray-100 dark:border-gray-700/60">
-        <div class="text-sm">
+        {{-- <div class="text-sm">
             {{ __('Si no cuentas con una cuenta, Ingresa y registrate') }} <a class="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
-        </div>
+        </div> --}}
         <!-- Warning -->
-        <div class="mt-5">
-            <div class="bg-yellow-500/20 text-yellow-700 px-3 py-2 rounded-lg">
-                <svg class="inline w-3 h-3 shrink-0 fill-current" viewBox="0 0 12 12">
-                    <path d="M10.28 1.28L3.989 7.575 1.695 5.28A1 1 0 00.28 6.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 1.28z" />
-                </svg>
-                <span class="text-sm">
-                    Sistema Desarrolado para realizar testing a nuevas caracteristicas, funciones y paquetes de Laravel 10.
-                </span>
-            </div>
+        <div class="mt-1 text-center bg-green-100 rounded-md">
+            <a href="https://maydev.tech" target="_blank"><p class="block text-md text-green-800">Sistema Desarrollado por la empresa: <br> Maydev Spa Servicios de Ingeniería</p>
+            
+            </a>
         </div>
+
     </div>
 </x-authentication-layout>

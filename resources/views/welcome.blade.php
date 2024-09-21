@@ -21,7 +21,7 @@
             box-sizing: border-box;
             border-width: 0;
             border-style: solid;
-            border-color: #e5e7eb
+            border-color: #c65504
         }
 
         ::after,
@@ -40,7 +40,8 @@
 
         body {
             margin: 0;
-            line-height: inherit
+            line-height: inherit;
+            background-color: #000;
         }
 
         hr {
@@ -837,7 +838,7 @@
 
 <body class="antialiased">
     <div
-        class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-900 selection:bg-red-500 selection:text-white">
+        class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gradient-to-t from-gray-500 to-gray-900 selection:bg-red-500 selection:text-white">
         @if (Route::has('login'))
             <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                 @auth
@@ -845,13 +846,12 @@
                         class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
                 @else
                     <a href="{{ route('login') }}"
-                        class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
-                        in</a>
+                        class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sistema</a>
 
-                    @if (Route::has('register'))
+                    {{-- @if (Route::has('register'))
                         <a href="{{ route('register') }}"
                             class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                    @endif
+                    @endif --}}
                 @endauth
             </div>
         @endif
@@ -867,7 +867,7 @@
                             <div class="h-80 md:h-50 w-full" data-carousel-inner>
                                 <!-- Item 1 -->
                                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                    <img src="https://i.ebayimg.com/images/g/sugAAOSwu15glM6c/s-l1200.webp"
+                                    <img src="{{ asset('images/banner_sushi.png') }}"
                                         class="object-cover w-full h-full" alt="Slide 1">
                                     {{-- <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-regular text-white md:text-2xl dark:text-gray-800">Texto I de imagen de Banner</span> --}}
                                 </div>
@@ -885,6 +885,8 @@
                                 </div>
                             </div>
                             <!-- Slider indicators -->
+
+                            
                             <div class="flex absolute bottom-5 left-1/2 z-10 -translate-x-1/2 space-x-2" data-carousel-indicators>
                                 <button type="button" class="w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition"></button>
                                 <button type="button" class="w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition"></button>
@@ -925,13 +927,13 @@
                     </nav>
             
                     <div class="flex justify-center space-x-5 mb-4">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com/atarashisushii?igsh=aWdmdjFuaHk0eGsy" target="_blank" rel="noopener noreferrer">
                             <img class="w-15 md:w-20 h-15 md:h-20" src="https://goodies.icons8.com/web/common/social/instagram.svg" />
                         </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.tiktok.com/@atarashisushi?_t=8putgIZeFTJ&_r=1" target="_blank" rel="noopener noreferrer">
                             <img class="w-15 md:w-20 h-15 md:h-20" src="https://goodies.icons8.com/web/common/social/tiktok.svg" />
                         </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.facebook.com/share/nD5qAYGSAkhc7EF6/?mibextid=qi2Omg" target="_blank" rel="noopener noreferrer">
                             <img class="w-15 md:w-20 h-15 md:h-20" src="https://goodies.icons8.com/web/common/social/facebook.svg" />
                         </a>
                         

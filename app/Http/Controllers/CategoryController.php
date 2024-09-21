@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
-
-
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -40,12 +38,21 @@ class CategoryController extends Controller
         //Validar datos del formulario
         $request->validate([
             'name'=>'required',
+            'image_path'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
            
         ]);
+
+        $imagePath = null;
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('categories', 'public');
+            
+        }
 
         $category = new Category();
         $category->name = $request->input('name');
         $category->user_id = Auth::id(); // Guardar el ID del usuario autenticado
+        $category->image_path = $imagePath; 
         $category->save();
 
 
@@ -66,8 +73,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
-    {
+    public function show(Category $category){
         // Obtenemos la información del usuario que creó la categoría
          $user = $category->user;
 
@@ -85,15 +91,30 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id){
+    public function update(Request $request, Category $category){
          //Validar datos del formulario
          $request->validate([
 
             'name'=>'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
            
         ]);
 
-        $category = Category::findOrFail($id);
+         // Manejo de la imagen
+       if ($request->hasFile('image')) {
+
+        // Si hay una nueva imagen, la guardamos y eliminamos la imagen anterior si existe
+        if ($category->image_path) {
+            Storage::disk('public')->delete($category->image_path);
+        }
+
+        // Guardar la nueva imagen
+        $imagePath = $request->file('image')->store('categories', 'public');
+        $category->image_path = $imagePath;
+
+       }
+
+        
         $category->name = $request->input('name');
         $category->save();
 
@@ -116,6 +137,12 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+
+            // Eliminar la imagen si existe
+        if ($category->image_path) {
+            Storage::disk('public')->delete($category->image_path);
+        }
+        
         $category->delete();
 
         session()->flash('swal', [
