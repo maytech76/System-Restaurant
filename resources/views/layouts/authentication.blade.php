@@ -53,7 +53,7 @@
                             <div class="flex justify-center">
                                 <!-- Logo -->
                                 @foreach ($companies as $company)
-                                    <img src="{{ asset('storage/' . $company->image_path) }}" class="w-[20px] h-[25px] object-contain">
+                                    <img src="{{ asset('storage/' . $company->image_path) }}" class="w-[180px] h-[225px] object-contain">
                                 @endforeach
                             </div>
 

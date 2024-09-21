@@ -927,13 +927,13 @@
                     </nav>
             
                     <div class="flex justify-center space-x-5 mb-4">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com/atarashisushii?igsh=aWdmdjFuaHk0eGsy" target="_blank" rel="noopener noreferrer">
                             <img class="w-15 md:w-20 h-15 md:h-20" src="https://goodies.icons8.com/web/common/social/instagram.svg" />
                         </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.tiktok.com/@atarashisushi?_t=8putgIZeFTJ&_r=1" target="_blank" rel="noopener noreferrer">
                             <img class="w-15 md:w-20 h-15 md:h-20" src="https://goodies.icons8.com/web/common/social/tiktok.svg" />
                         </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.facebook.com/share/nD5qAYGSAkhc7EF6/?mibextid=qi2Omg" target="_blank" rel="noopener noreferrer">
                             <img class="w-15 md:w-20 h-15 md:h-20" src="https://goodies.icons8.com/web/common/social/facebook.svg" />
                         </a>
                         
