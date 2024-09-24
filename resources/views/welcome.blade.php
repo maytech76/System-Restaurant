@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Atarashi|Sushii</title>
+    <title>Atarashi | Sushii</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+
 
     <!-- Styles -->
     <style>
@@ -856,9 +857,8 @@
             </div>
         @endif
 
-      
-
-        <div class="max-w-7xl mx-auto p-6 lg:p-8">
+    
+        <div class="max-w-7xl mx-auto p-4 lg:p-8">
             <div class="flex justify-center">        
                     {{-- Banner Principal --}}
                     <div class="w-screen mx-auto"> <!-- Cambié de w-full a w-screen para tomar el ancho completo de la pantalla -->
@@ -919,13 +919,10 @@
             @livewire('category-products')
 
                 {{-- Session Footer --}}
-           
-                <footer class="bg-black flex flex-col xs:space-y-8 sm:space-y-10 justify-center mt-10 p-10 rounded-b-xl">
-
+            <footer class="bg-black flex flex-col xs:space-y-8 sm:space-y-10 justify-center mt-10 p-10 rounded-b-xl">
                     <nav class="flex justify-center flex-wrap gap-6 text-gray-200 font-medium mb-4">
-                        <P class="hover:text-gray-900" href="#">¡NO TE ENRROLLES, MEJOR PIDETE UN ROLLITO!</P>
-                    </nav>
-            
+                        <P class="hover:text-gray-900 text-center" href="#">¡NO TE ENRROLLES, MEJOR PIDETE UN ROLLITO!</P>
+                    </nav>      
                     <div class="flex justify-center space-x-5 mb-4">
                         <a href="https://www.instagram.com/atarashisushii?igsh=aWdmdjFuaHk0eGsy" target="_blank" rel="noopener noreferrer">
                             <img class="w-15 md:w-20 h-15 md:h-20" src="https://goodies.icons8.com/web/common/social/instagram.svg" />
@@ -943,7 +940,12 @@
            
 
         </div>
+
     </div>
+
+    
+
+
 </body>
 
 </html>

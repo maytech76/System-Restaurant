@@ -1,21 +1,25 @@
+
 <div>
-    <div>
         {{-- categorias --}}
-        <div class="flex justify-center shadow-md w-full h-[150px] my-6 rounded-lg gap-4 overflow-x-auto">
-            @foreach ($categories as $category)
-                <div class="gap-2 text-center flex-shrink-0">
-                    <a href="#" wire:click.prevent="setCategory({{ $category->id }})" class="">
-                        <img src="{{ $category->image_path ? asset('storage/' . $category->image_path) : asset('storage/categories/default.png') }}"
-                             class="w-20 sm:w-[60px] sm:h-[80px] object-cover rounded-full border-2 border-red-700 border-solid">
-                        <p class="text-gray-300">{{ $category->name }}</p>
-                    </a>
-                </div>
-            @endforeach
+        
+        <div class="flex justify-center shadow-md w-full h-[150px] my-6 rounded-lg gap-4 overflow-x-auto px-6">
+            <div class="flex gap-4"> <!-- Nuevo contenedor para controlar el padding interno -->
+                @foreach ($categories as $category)
+                    <div class="gap-2 text-center flex-shrink-0">
+                        <a href="#" wire:click.prevent="setCategory({{ $category->id }})" class="mx-8">
+                            <img src="{{ $category->image_path ? asset('storage/' . $category->image_path) : asset('storage/categories/default.png') }}"
+                               class="w-16 h-16 sm:w-20 sm:h-20 lg:w-30 lg:h-30 object-cover rounded-full border-2 border-red-700 border-solid">
+                            <p class="text-gray-300 text-xs sm:text-sm md:text-md">{{ $category->name }}</p>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
         </div>
+        
+        
     
         {{-- Session de Menu --}}
         <div class="mt-10">
-            <div>
                 <div class='p-1'>
                     <h4 class="text-gray-200 font-semibold uppercase">{{ $categories->find($selectedCategory)->name }}</h4>
                     <ul class='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 md:p-2 xl:p-4'>
@@ -48,8 +52,8 @@
                         @endforeach
                     </ul>
                 </div>
-            </div>
+           
         </div>
-    </div>
-    
 </div>
+    
+

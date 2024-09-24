@@ -18,10 +18,11 @@ use CodersFree\Shoppingcart\Facades\Cart;
 use App\Http\Controllers\CartController;
 
 use App\Livewire\Products\AddToCart as ProductsAddToCart;
+use Illuminate\Support\Facades\File;
 
-Route::get('/add-to-cart/{productId}', ProductsAddToCart ::class)->name('add-to-cart');
+/* Route::get('/add-to-cart/{productId}', ProductsAddToCart ::class)->name('add-to-cart');
 
-Route::get('/add-to-cart/{productId}', [CartController::class, 'show'])->name('add-to-cart');
+Route::get('/add-to-cart/{productId}', [CartController::class, 'show'])->name('add-to-cart'); */
 
 /* Controlador donde visualizamos la busqueda de producto segun su nombre  */
 Route::get('/product-search', ProductSearch ::class)->name('product.search');
@@ -40,6 +41,29 @@ Route::get('/', function () {
     // Pasar los datos a la vista
     return view('welcome', compact('categories', 'products', 'companies'));
 });
+
+/* Visualizar publicamente las Productos */
+Route::get('/storage/products/{filename}', function ($filename) {
+    $path = storage_path('app/public/products/' . $filename);
+    
+    if (!File ::exists($path)) {
+        abort(404);
+    }
+    
+    return response()->file($path);
+})->name('storage.products');
+
+
+/* Visualizar publicamente las categorias */
+Route::get('/storage/categories/{filename}', function ($filename) {
+    $path = storage_path('app/public/categories/' . $filename);
+    
+    if (!File ::exists($path)) {
+        abort(404);
+    }
+    
+    return response()->file($path);
+})->name('storage.categories');
 
 
 /* Ruta para controlador categorias*/
