@@ -916,7 +916,9 @@
                     </div>
             </div>
        
+            
             @livewire('category-products')
+
 
                 {{-- Session Footer --}}
             <footer class="bg-black flex flex-col xs:space-y-8 sm:space-y-10 justify-center mt-10 p-10 rounded-b-xl">
@@ -942,9 +944,6 @@
         </div>
 
     </div>
-
-    
-
 
 </body>
 

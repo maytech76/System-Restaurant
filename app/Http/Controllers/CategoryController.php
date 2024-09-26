@@ -9,19 +9,17 @@ use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+   
     public function index()
     {
-        //Aplicamos la Paginacion por 8 items las cuales se reflejaran en la vista index
-        $categories = Category::paginate(6);
+         // Obtener solo las categorías con status = 1 (activas) y paginar 4 por página
+         $categories = Category::where('status', 1)->paginate(4);
+
+         //Retornamos  la vista con la información de las categorías con status=1
         return view('categories.index', compact('categories'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    
     public function create()
     {
         // Obtener la última categoría registrada
@@ -30,9 +28,7 @@ class CategoryController extends Controller
         return view('categories.create', compact('lastCategory'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+   
     public function store(Request $request)
     {
         //Validar datos del formulario
@@ -70,9 +66,7 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->with('success', 'Categoria Creada');
     }
 
-    /**
-     * Display the specified resource.
-     */
+   
     public function show(Category $category){
         // Obtenemos la información del usuario que creó la categoría
          $user = $category->user;
@@ -80,17 +74,12 @@ class CategoryController extends Controller
         return view('categories.show', compact('category', 'user'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Category $category)
-    {
+    
+    public function edit(Category $category){
         return view('categories.edit', compact('category'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
     public function update(Request $request, Category $category){
          //Validar datos del formulario
          $request->validate([
@@ -111,11 +100,13 @@ class CategoryController extends Controller
         // Guardar la nueva imagen
         $imagePath = $request->file('image')->store('categories', 'public');
         $category->image_path = $imagePath;
+       
 
        }
 
         
         $category->name = $request->input('name');
+        $category->status = $request->status;  // Actualizamos el campo status
         $category->save();
 
 
@@ -132,29 +123,45 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->with('success', 'Producto Actualizado');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Category $category)
-    {
+    
+    public function destroy(Category $category){
+        // Verificar si la categoría tiene productos relacionados
+        if ($category->products()->count() > 0) {
+            // Si tiene productos, solo se desactiva cambiando el estado a 0
+            $category->status = 0;
+            $category->save();
 
-            // Eliminar la imagen si existe
-        if ($category->image_path) {
-            Storage::disk('public')->delete($category->image_path);
+            // Mostrar mensaje de desactivación con SweetAlert
+            session()->flash('swal', [
+                'title' => "Categoría Desactivada",
+                'text' => "Esta categoría ha sido desactivada porque tiene productos asociados.",
+                'icon' => "warning",
+                'showConfirmButton' => false,
+                'timer' => 2000,
+            ]);
+
+            // Redireccionar a la lista de categorías
+            return redirect()->route('categories.index')->with('success', 'Categoría desactivada.');
+        } else {
+            // Si no tiene productos, eliminar la imagen si existe
+            if ($category->image_path && Storage::disk('public')->exists($category->image_path)) {
+                Storage::disk('public')->delete($category->image_path);
+            }
+
+            // Luego eliminar la categoría
+            $category->delete();
+
+            // Mostrar mensaje de eliminación con SweetAlert
+            session()->flash('swal', [
+                'title' => "Registro Eliminado",
+                'text' => "Eliminado, Proceso Irreversible..!!",
+                'icon' => "warning",
+                'showConfirmButton' => false,
+                'timer' => 2000,
+            ]);
+
+            // Redireccionar a la lista de categorías
+            return redirect()->route('categories.index')->with('success', 'Categoría eliminada.');
         }
-        
-        $category->delete();
-
-        session()->flash('swal', [
-            
-            'title' => "Registro",
-            'text'=> "Eliminado, Proceso Inrebersible..!!",
-            'icon' => "warning",
-            'showConfirmButton'=> false,
-            'timer'=> 2000
-         ]);
-
-        //Redirecionamos a categories.index
-        return redirect()->route('categories.index')->with('success', 'Categoria Eliminada');
     }
 }

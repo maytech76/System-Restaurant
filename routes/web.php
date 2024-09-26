@@ -64,7 +64,7 @@ Route::get('/storage/categories/{filename}', function ($filename) {
     
     return response()->file($path);
 })->name('storage.categories');
-
+https://chatgpt.com/c/66f441be-5d8c-800a-a02a-78fef93fbe3e
 
 /* Ruta para controlador categorias*/
 Route::resource('categories', CategoryController::class);

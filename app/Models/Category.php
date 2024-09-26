@@ -14,7 +14,7 @@ class Category extends Model
 
     protected $fillable = [
 
-        'name', 'user_id', 'image_path'
+        'name', 'user_id', 'image_path', 'status'
     ];
 
     //Definimo la relacion entre Category and Product
