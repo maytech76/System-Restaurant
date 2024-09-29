@@ -21,6 +21,7 @@ class CategoryController extends Controller
 
     /* Ingresar Nueva Categoria */
     public function store(Request $request){
+        
         $request->validate([
             'name' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -82,7 +83,7 @@ class CategoryController extends Controller
         return response()->json([
             'category' => $category,
             'message' => 'Categoria Actualizada con Exito..!',
-        ]);
+        ], 201);
     }
 
 
