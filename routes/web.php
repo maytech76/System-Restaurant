@@ -15,9 +15,10 @@ use App\Models\Company;
 use App\Models\Product;
 use App\Livewire\ProductSearch;
 use CodersFree\Shoppingcart\Facades\Cart;
-use App\Http\Controllers\CartController;
 
+use App\Http\Controllers\TableController;
 use App\Livewire\Products\AddToCart as ProductsAddToCart;
+
 use Illuminate\Support\Facades\File;
 
 /* Route::get('/add-to-cart/{productId}', ProductsAddToCart ::class)->name('add-to-cart');
@@ -40,6 +41,9 @@ Route::get('/', function () {
 
     // Pasar los datos a la vista
     return view('welcome', compact('categories', 'products', 'companies'));
+
+    return view('pages.dashboard', compact('companies'));
+
 });
 
 /* Visualizar publicamente las Productos */
@@ -64,7 +68,8 @@ Route::get('/storage/categories/{filename}', function ($filename) {
     
     return response()->file($path);
 })->name('storage.categories');
-https://chatgpt.com/c/66f441be-5d8c-800a-a02a-78fef93fbe3e
+
+
 
 /* Ruta para controlador categorias*/
 Route::resource('categories', CategoryController::class);
@@ -73,17 +78,20 @@ Route::resource('categories', CategoryController::class);
 /* Ruta para controlador productos */
 Route::resource('products', ProductController::class);
 
-/* Ruta para controlador Car to system */
-Route::resource('cars', CarController::class);
+/* Ruta para controlador Mesas */
+Route::resource('tables', TableController::class);
 
 /* Ruta para controlador Car to system */
-Route::resource('drivers', DriverController::class);
+/* Route::resource('cars', CarController::class); */
+
+/* Ruta para controlador Car to system */
+/* Route::resource('drivers', DriverController::class); */
 
 /* Ruta para controlador Datos to system */
-Route::resource('companies', CompanyController::class);
+ Route::resource('companies', CompanyController::class); 
 
 /* Ruta para controlador Datos to system */
-Route::resource('customers', CustomerController::class);
+/* Route::resource('customers', CustomerController::class); */
 
 /* Ruta para controlador ProductlistController*/
 Route::get('productslist/{product}', [ProductListController::class,  'index'])->name('productslist');

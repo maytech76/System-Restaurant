@@ -1,4 +1,4 @@
-<div>
+{{-- <div>
     @livewire('Sidebar', ['companies' => $companies]) 
             
     <!-- Logo -->
@@ -7,4 +7,4 @@
             <img src="{{ asset('storage/' . $company->image_path) }}" alt="Logo de {{ $company->name }}"> 
         </a>
     @endforeach 
-</div>
+</div> --}}

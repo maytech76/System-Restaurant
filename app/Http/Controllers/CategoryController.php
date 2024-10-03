@@ -20,8 +20,7 @@ class CategoryController extends Controller
     }
 
     
-    public function create()
-    {
+    public function create(){
         // Obtener la última categoría registrada
         $lastCategory = Category::latest()->first();
 
@@ -29,8 +28,7 @@ class CategoryController extends Controller
     }
 
    
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         //Validar datos del formulario
         $request->validate([
             'name'=>'required',

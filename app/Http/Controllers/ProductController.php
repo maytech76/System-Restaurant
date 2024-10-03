@@ -21,6 +21,7 @@ class ProductController extends Controller
 
     
     public function create(){
+
         $categories = Category::all(); // Obtener todas las categorías
         return view('products.create', compact('categories')); //Pasamos el listado de categorias a la vista create
     }
@@ -81,6 +82,7 @@ class ProductController extends Controller
 
    
     public function show(Product $product){
+
          // Obtenemos la información del usuario que creó el producto
          $user = $product->user;
 
@@ -88,7 +90,6 @@ class ProductController extends Controller
     }
 
     
-
 
     public function edit(Product $product){
          // Obtener todas las categorías para el select
