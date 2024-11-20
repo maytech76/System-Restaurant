@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\DataFeed;
+
 
 class DashboardController extends Controller
 {
@@ -32,5 +34,14 @@ class DashboardController extends Controller
     public function fintech()
     {
         return view('pages/dashboard/fintech');
+    }
+
+    
+    public function countcat(){
+       
+        $cantidadcat = Category::where('status', 1)->count();
+
+        return view('dashboard.dashboard.index', compact('cantidadcat'));
+
     }
 }

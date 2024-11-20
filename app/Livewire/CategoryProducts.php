@@ -12,8 +12,7 @@ class CategoryProducts extends Component
     public $selectedCategory;
     public $products;
 
-    public function mount()
-    {
+    public function mount(){
         // Obtener solo las categorías con status = 1 (activas)
         $this->categories = Category::where('status', 1)->get(); 
     
@@ -28,19 +27,16 @@ class CategoryProducts extends Component
         $this->loadProducts();
     }
 
-    public function loadProducts()
-    {
+    public function loadProducts(){
         $this->products = Category ::find($this->selectedCategory)->products; // Cargar productos de la categoría seleccionada
     }
 
-    public function updatedSelectedCategory($value)
-    {
+    public function updatedSelectedCategory($value){
         $this->loadProducts();
     }
 
     
-    public function setCategory($categoryId)
-    {
+    public function setCategory($categoryId){
         $this->selectedCategory = $categoryId;
         $this->loadProducts();
     }

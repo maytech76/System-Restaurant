@@ -14,18 +14,18 @@ class ProductSearch extends Component
     public $search = ''; // Campo de búsqueda
 
     // Función para actualizar los resultados en tiempo real
-    public function updatingSearch()
+ /*    public function updatingSearch()
     {
         $this->resetPage();
-    }
+    } */
 
     //---------------------------------------------------------
     // Redirigir a la vista "add-to-cart" con el ID del producto
-    public function addToCart($productId)
+   /*  public function addToCart($productId)
     {
         // Redirigir con el ID del producto
         return redirect()->route('add-to-cart', ['productId' => $productId]);
-    }
+    } */
     //---------------------------------------------------------
 
 

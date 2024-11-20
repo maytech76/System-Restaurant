@@ -9,18 +9,18 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
     public function up(): void
     {
-        Schema::create('contracts', function (Blueprint $table) {
+        Schema::create('waiters', function (Blueprint $table) {
+
             $table->id();
-            $table->foreignId('customer_id')->constrained()->onDelete('cascade');
-            $table->string('code', 150);
-            $table->decimal('total_general', 10,2);
-            $table->decimal('total_item', 10,2);
-            $table->date('date_start');
-            $table->date('date_end');
+            $table->string('name');
+            $table->foreignId('user_id')->constrained();
+            $table->string('image_path')->nullable();
             $table->integer('status')->default(1);
             $table->timestamps();
+
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contracts');
+        Schema::dropIfExists('waiters');
     }
 };

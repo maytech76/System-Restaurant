@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
+
    
-    public function index()
-    {
+    public function index(){
          // Obtener solo las categorías con status = 1 (activas) y paginar 4 por página
          $categories = Category::where('status', 1)->paginate(4);
 
@@ -21,6 +21,7 @@ class CategoryController extends Controller
 
     
     public function create(){
+
         // Obtener la última categoría registrada
         $lastCategory = Category::latest()->first();
 
@@ -29,6 +30,7 @@ class CategoryController extends Controller
 
    
     public function store(Request $request){
+
         //Validar datos del formulario
         $request->validate([
             'name'=>'required',
@@ -66,6 +68,7 @@ class CategoryController extends Controller
 
    
     public function show(Category $category){
+
         // Obtenemos la información del usuario que creó la categoría
          $user = $category->user;
 
@@ -79,6 +82,7 @@ class CategoryController extends Controller
 
     
     public function update(Request $request, Category $category){
+
          //Validar datos del formulario
          $request->validate([
 
@@ -123,6 +127,7 @@ class CategoryController extends Controller
 
     
     public function destroy(Category $category){
+        
         // Verificar si la categoría tiene productos relacionados
         if ($category->products()->count() > 0) {
             // Si tiene productos, solo se desactiva cambiando el estado a 0

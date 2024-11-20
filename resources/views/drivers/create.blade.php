@@ -1,21 +1,21 @@
 <x-app-layout>
 
-    <!-- Header General -->
-    <div class="w-[590px] sm:w-[630px] md:w-[1230px] justify-center bg-white rounded-md shadow mt-4 mx-auto p-2">
-        <div class="flex flex-col sm:flex-row sm:items-center w-[170px] sm:w-[700px] md:w-[1200px] justify-between mx-auto my-2">
-    
-            <!-- Left: Title -->
-            <div class="my-1 sm:mb-0 sm:mr-8">
-                <h3 class="text-sm md:text-2xl text-gray-800 dark:text-gray-100 font-normal">Registros de Conductor</h3>
+        <!-- Header General -->
+        <div class="w-[590px] sm:w-[630px] md:w-[1230px] justify-center bg-white rounded-md shadow mt-4 mx-auto p-2">
+            <div class="flex flex-col sm:flex-row sm:items-center w-[170px] sm:w-[700px] md:w-[1200px] justify-between mx-auto my-2">
+        
+                <!-- Left: Title -->
+                <div class="my-1 sm:mb-0 sm:mr-8">
+                    <h3 class="text-sm md:text-2xl text-gray-800 dark:text-gray-100 font-normal">Registros de Conductor</h3>
+                </div>
+        
+                <!-- Right: Actions -->
+                <div class="sm:ml-6 sm:mx-0 grid grid-flow-col justify-center sm:justify-between md:justify-end gap-2">
+                    <x-datepicker />
+                </div>
+        
             </div>
-    
-            <!-- Right: Actions -->
-            <div class="sm:ml-6 sm:mx-0 grid grid-flow-col justify-center sm:justify-between md:justify-end gap-2">
-                <x-datepicker />
-            </div>
-    
         </div>
-    </div>
     
     
         <div class="bg-white p-8 rounded-lg shadow m-4">
