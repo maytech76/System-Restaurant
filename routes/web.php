@@ -13,12 +13,20 @@ use App\Http\Controllers\ProductListController;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\Product;
-use App\Livewire\ProductSearch;
 use CodersFree\Shoppingcart\Facades\Cart;
 
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\WaiterController;
+
 use App\Livewire\Products\AddToCart as ProductsAddToCart;
+use App\Livewire\ProductSearch;
+
+use App\Livewire\Menu\CountControl;
+use App\Livewire\Menu\CountControlClose;
+use App\Livewire\Menu\OrderCreation;
+use App\Livewire\Menu\SelectTables;
+use App\Livewire\Menu\KitchenControl;
+use App\Livewire\Menu\OrderProductsAdd;
 
 use Illuminate\Support\Facades\File;
 
@@ -107,6 +115,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    //Se definie la ruta  para el componente SelectTable->Order-creation
+    Route::get('/menu/select-tables', SelectTables::class)->name('select.tables');
  
 });   
     

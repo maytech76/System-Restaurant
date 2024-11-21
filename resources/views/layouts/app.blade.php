@@ -38,7 +38,7 @@
         
     </head>
     <body
-        class="font-inter antialiased bg-gray-200 dark:bg-gray-900 text-gray-600 dark:text-gray-400"
+        class="font-inter antialiased bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400"
         :class="{ 'sidebar-expanded': sidebarExpanded }"
         x-data="{ sidebarOpen: false, sidebarExpanded: localStorage.getItem('sidebar-expanded') == 'true' }"
         x-init="$watch('sidebarExpanded', value => localStorage.setItem('sidebar-expanded', value))"    
@@ -85,6 +85,36 @@
                 Swal.fire({!! json_encode(session('swal')) !!});
             </script>    
         @endif
+
+        @livewireScripts
+
+
+        @stack('js')
+
+        <script>
+            Livewire.on('postCreated', () => {
+                Swal.fire({
+                    title: '¡Éxito!',
+                    text: '¡Post creado con éxito!',
+                    icon: 'success',
+                    showConfirmButton: false,
+                     timer: 1500
+                });
+            });
+        </script>
+
+        <script>
+            Livewire.on('productAdd', () => {
+                Swal.fire({
+
+                    position: "top-end",
+                    icon: "success",
+                    title: 'Producto Agregado',
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+            });
+        </script>
 
     </body>
 </html>

@@ -33,6 +33,9 @@
                         <th scope="col" class="px-6 py-3">
                             Nombre
                         </th>
+                        <th scope="col" class="px-6 py-3 text-center">
+                            Sillas
+                        </th>
                         <th scope="col" class="px-6 py-3">
                             Ver
                         </th>
@@ -53,6 +56,9 @@
                         
                         <td class="px-6 py-4">
                             {{$table->name}}
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            {{$table->chairs}}
                         </td>
                         <td class="px-6 py-4">
                             <button><a href="{{ route('tables.show', $table->id) }}" class="text-blue-600">Ver</a></button>
