@@ -78,7 +78,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-         @livewireScriptConfig
+        @livewireStyles
 
         @if (session('swal'))
             <script>
