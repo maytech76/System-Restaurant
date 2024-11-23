@@ -20,18 +20,24 @@ class Product extends Model
          'stock',
          'category_id',
          'user_id',
-         'image_path', // Agregar aquí
+         'image_path', // imagen del producto
 
     ];
 
     /* Declaramos el tipo de  relacion que posee products con categories */
     public function category(){
+        
         return $this->belongsTo(Category::class);
     }
 
     // Definimos la relacion entre Category y User asi podriamos relizar consultas a la tabla usuario
-    public function user()
-    {
+    public function user(){
+
         return $this->belongsTo(User::class);
+    }
+
+    public function orderDetails(){
+
+        return $this->hasMany(OrderDetail::class);
     }
 }

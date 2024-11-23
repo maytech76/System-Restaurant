@@ -118,6 +118,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     //Se definie la ruta  para el componente SelectTable->Order-creation
     Route::get('/menu/select-tables', SelectTables::class)->name('select.tables');
+
+     //Se define la ruta que recibira el numero de mesa selecionado, desde SelectTables
+     Route::get('/menu/order-creation/{table_id}', OrderCreation::class)->name('order.creation');
  
 });   
     
