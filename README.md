@@ -106,8 +106,33 @@ npm run dev
 1. **Haz Fork** del repositorio
 2. **Clona** tu fork localmente:
 ```bash
-git clone https://github.com/tu-usuario/inmobiliaria-laravel.git
+git remote add origin https://github.com/maytech76/innovar.git -->agregamos el remote Github en  git local
+git fetch upstream
+ 
 ```
+
+3.**Creas una rama nueva:
+```bash
+git checkout -b dev2  
+```
+
+4.**realiza los cambios y commit:
+```bash
+git add .
+git commit -m "Descripción clara de los cambios"
+
+envia el push:
+git push origin mi-contribucion
+```
+
+4.Crear un Pull Request (PR)
+   > Ve a tu fork en GitHub (github.com/tu-usuario/repositorio).
+
+   > Haz clic en "Compare & Pull Request".
+
+   >  Describe tus cambios y haz clic en "Create Pull Request".
+
+
 
 ### Estructura del Proyecto
 
