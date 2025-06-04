@@ -156,9 +156,9 @@ git push origin mi-contribucion
     └── 🌱 seeders/
 ```
 
-## 📬 Contacto & Colaboraciones
+## 📬 Contacto:
 
-¡Siéntete libre de contactarme para preguntas, mejoras o oportunidades de colaboración!
+¡Siéntete libre de contactarme para preguntas, mejoras o nuevas oportunidades!
 
 <div align="center">
   <a href="https://github.com/maytech76">
