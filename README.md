@@ -126,9 +126,10 @@ git push origin mi-contribucion
 ```
 
 4.Crear un Pull Request (PR)
-   > Ve a tu fork en GitHub (github.com/tu-usuario/repositorio).
 
-   > Haz clic en "Compare & Pull Request".
+   > Ve a tu fork en GitHub (github.com/tu-usuario/repositorio)
+
+   > Haz clic en "Compare & Pull Request"
 
    >  Describe tus cambios y haz clic en "Create Pull Request".
 
