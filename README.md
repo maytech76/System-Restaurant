@@ -4,6 +4,28 @@
 ![N|Solid](https://qrscann.maydev.tech/all_images/bigbang/Dashboard.jpg)
 
 
+<div align="center">
+  <a href="https://laravel.com" target="_blank">
+    <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
+  </a>
+  <a href="https://tailwindcss.com" target="_blank">
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  </a>
+  <a href="https://www.mysql.com" target="_blank">
+    <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+  </a>
+  <a href="https://laravel-livewire.com" target="_blank">
+    <img src="https://img.shields.io/badge/Livewire-4e56a6?style=for-the-badge&logo=laravel-livewire&logoColor=white" alt="Livewire">
+  </a>
+</div>
+
+
 **Solución completa para gestión de Mesas y Pedidos** con panel administrativo, menú digital y sistema para la gestion de pedidos, gestion de mesero-garzones
 
 ## 🌟 Características Destacadas
