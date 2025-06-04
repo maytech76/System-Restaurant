@@ -156,8 +156,24 @@ git push origin mi-contribucion
     └── 🌱 seeders/
 ```
 
+## 📬 Contacto & Colaboraciones
 
-# Iconos comunes:
+¡Siéntete libre de contactarme para preguntas, mejoras o oportunidades de colaboración!
+
+<div align="center">
+  <a href="https://github.com/maytech76">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+  </a>
+  <a href="mailto:admin@maydev.tech">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+  </a>
+  <a href="https://www.linkedin.com/in/marco-antonio-yanez-8664535b/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+</div>
+
+
+# Galeria de Iconos :
 - 🔐 Seguridad/Autenticación
 - 🛡️ Protección
 - 📚 Documentación
