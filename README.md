@@ -8,13 +8,14 @@
 
 
 <div align="center">
-  <img src="https://tu-sitio-web.com/ruta/laravel-icon.png" alt="Laravel" width="60" height="60" title="Laravel">
-  <img src="https://tu-sitio-web.com/ruta/tailwind-icon.png" alt="Tailwind CSS" width="60" height="60" title="Tailwind CSS">
-  <img src="https://tu-sitio-web.com/ruta/html-icon.png" alt="HTML5" width="60" height="60" title="HTML5">
-  <img src="https://tu-sitio-web.com/ruta/javascript-icon.png" alt="JavaScript" width="60" height="60" title="JavaScript">
-  <img src="https://tu-sitio-web.com/ruta/mysql-icon.png" alt="MySQL" width="60" height="60" title="MySQL">
-  <img src="https://qrscann.maydev.tech/all_images/tecnologias/tailwind.png" alt="Livewire" width="60" height="60" title="Tailwind">
+  <img src="https://qrscann.maydev.tech/all_images/tecnologias/laravel.png" alt="Laravel" width="60" height="60" title="Laravel">
+  <img src="https://qrscann.maydev.tech/all_images/tecnologias/html.png" alt="Tailwind CSS" width="60" height="60" title="Html">
+  <img src="https://qrscann.maydev.tech/all_images/tecnologias/javascript.png" alt="HTML5" width="60" height="60" title="Javascript">
   <img src="https://qrscann.maydev.tech/all_images/tecnologias/ajax.png" alt="Livewire" width="60" height="60" title="Ajax">
+  <img src="https://qrscann.maydev.tech/all_images/tecnologias/php.png" alt="JavaScript" width="60" height="60" title="Php">
+  <img src="https://qrscann.maydev.tech/all_images/tecnologias/mysql.png" alt="MySQL" width="60" height="60" title="MySQL">
+  <img src="https://qrscann.maydev.tech/all_images/tecnologias/tailwind.png" alt="Livewire" width="60" height="60" title="Tailwind">
+  
 </div>
 
 
